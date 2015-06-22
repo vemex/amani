@@ -6,6 +6,8 @@
 .metadata
 bin/
 tmp/
+.settings/
+.project
 *.tmp
 *.bak
 *.swp
