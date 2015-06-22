@@ -9,7 +9,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 /**
  * 身份验证拦截器
  * 
- * @author VV
+ * @author VV 
  *
  */
 public class AuthcationActionInterceptor extends HandlerInterceptorAdapter {
