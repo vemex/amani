@@ -1,10 +1,10 @@
-package anmani.wechat.platform.dashboard.controller;
+package amani.wechat.platform.dashboard.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model; 
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import anmani.webchat.platform.core.mvc.BaseController;
+import amani.wechat.platform.core.mvc.BaseController;
 
 @Controller
 @RequestMapping("/CustomerMenu")

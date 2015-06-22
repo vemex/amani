@@ -1,4 +1,4 @@
-package anmani.webchat.platform.core;
+package amani.wechat.platform.core;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;

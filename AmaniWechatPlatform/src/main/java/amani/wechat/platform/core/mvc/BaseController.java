@@ -1,4 +1,4 @@
-package anmani.webchat.platform.core.mvc;
+package amani.wechat.platform.core.mvc;
 
 /**
  * 

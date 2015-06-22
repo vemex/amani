@@ -17,7 +17,7 @@
 	<!-- Spring MVC servlet -->
 	<servlet>
 		<servlet-name>SpringMVC</servlet-name>
-		<servlet-class>anmani.webchat.platform.core.UTF8DispatcherServlet</servlet-class>
+		<servlet-class>amani.wechat.platform.core.UTF8DispatcherServlet</servlet-class>
 		
 		<init-param>
 			<param-name>contextConfigLocation</param-name>
