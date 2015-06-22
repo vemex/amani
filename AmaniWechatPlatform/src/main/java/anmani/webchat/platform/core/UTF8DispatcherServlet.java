@@ -6,7 +6,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.servlet.DispatcherServlet;
-import org.springframework.web.servlet.support.RequestContextUtils;
 
 public class UTF8DispatcherServlet extends DispatcherServlet {
 	/**
