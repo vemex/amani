@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-23 2:29:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="amani.wechart.platform.dao.entities.AmnSms" table="amn_sms" catalog="amn" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="openid" type="string">
+            <column name="openid" length="50" not-null="true">
+                <comment>&#183;&#162;&#203;&#205;&#213;&#223;ID</comment>
+            </column>
+        </property>
+        <property name="msgtype" type="string">
+            <column name="msgtype" length="50">
+                <comment>&#208;&#197;&#207;&#162;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535">
+                <comment>&#213;&#190;&#196;&#218;&#208;&#197;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="state" type="byte">
+            <column name="state" not-null="true">
+                <comment>0&#161;&#162;&#206;&#180;&#180;&#166;&#192;&#237; 1&#161;&#162;&#210;&#209;&#182;&#193;</comment>
+            </column>
+        </property>
+        <property name="isreply" type="boolean">
+            <column name="isreply" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#187;&#216;&#184;&#180;</comment>
+            </column>
+        </property>
+        <property name="createtime" type="int">
+            <column name="createtime" not-null="true">
+                <comment>&#183;&#162;&#203;&#205;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

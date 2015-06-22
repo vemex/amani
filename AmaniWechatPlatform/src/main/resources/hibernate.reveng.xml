@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="amn" match-name="amn_access_statistics"/>
+  <table-filter match-catalog="amn" match-name="amn_account"/>
+  <table-filter match-catalog="amn" match-name="amn_barcode"/>
+  <table-filter match-catalog="amn" match-name="amn_card"/>
+  <table-filter match-catalog="amn" match-name="amn_cart"/>
+  <table-filter match-catalog="amn" match-name="amn_configs"/>
+  <table-filter match-catalog="amn" match-name="amn_groups"/>
+  <table-filter match-catalog="amn" match-name="amn_keywords"/>
+  <table-filter match-catalog="amn" match-name="amn_material"/>
+  <table-filter match-catalog="amn" match-name="amn_menu"/>
+  <table-filter match-catalog="amn" match-name="amn_message"/>
+  <table-filter match-catalog="amn" match-name="amn_mpages"/>
+  <table-filter match-catalog="amn" match-name="amn_news"/>
+  <table-filter match-catalog="amn" match-name="amn_news_cate"/>
+  <table-filter match-catalog="amn" match-name="amn_news_comment"/>
+  <table-filter match-catalog="amn" match-name="amn_news_pic"/>
+  <table-filter match-catalog="amn" match-name="amn_orders"/>
+  <table-filter match-catalog="amn" match-name="amn_orders_item"/>
+  <table-filter match-catalog="amn" match-name="amn_product"/>
+  <table-filter match-catalog="amn" match-name="amn_product_album"/>
+  <table-filter match-catalog="amn" match-name="amn_product_keys"/>
+  <table-filter match-catalog="amn" match-name="amn_product_relevance"/>
+  <table-filter match-catalog="amn" match-name="amn_productcate"/>
+  <table-filter match-catalog="amn" match-name="amn_reply"/>
+  <table-filter match-catalog="amn" match-name="amn_sms"/>
+  <table-filter match-catalog="amn" match-name="amn_sysmenu"/>
+  <table-filter match-catalog="amn" match-name="amn_user"/>
+</hibernate-reverse-engineering>

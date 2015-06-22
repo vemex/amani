@@ -1,0 +1,96 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-23 2:29:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="amani.wechart.platform.dao.entities.AmnMaterial" table="amn_material" catalog="amn" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="cid" type="java.lang.Integer">
+            <column name="cid">
+                <comment>&#183;&#214;&#192;&#224;id</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title">
+                <comment>&#177;&#234;&#204;&#226;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="subtitle" type="string">
+            <column name="subtitle">
+                <comment>&#184;&#177;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="path" type="string">
+            <column name="path">
+                <comment>&#177;&#234;&#204;&#226;&#205;&#188;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="descr" type="string">
+            <column name="descr" length="16777215">
+                <comment>&#188;&#242;&#189;&#233;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535">
+                <comment>&#189;&#233;&#201;&#220;</comment>
+            </column>
+        </property>
+        <property name="link" type="string">
+            <column name="link">
+                <comment>&#205;&#226;&#193;&#180;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="videopath" type="string">
+            <column name="videopath" />
+        </property>
+        <property name="hits" type="java.lang.Integer">
+            <column name="hits">
+                <comment>&#181;&#227;&#187;&#247;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="isrec" type="java.lang.Boolean">
+            <column name="isrec">
+                <comment>&#202;&#199;&#183;&#241;&#205;&#198;&#188;&#246;</comment>
+            </column>
+        </property>
+        <property name="hot" type="java.lang.Boolean">
+            <column name="hot">
+                <comment>&#200;&#200;&#181;&#227;&#208;&#194;&#206;&#197;</comment>
+            </column>
+        </property>
+        <property name="new_" type="java.lang.Boolean">
+            <column name="new">
+                <comment>&#215;&#238;&#208;&#194;&#208;&#194;&#206;&#197;</comment>
+            </column>
+        </property>
+        <property name="praise" type="java.lang.Integer">
+            <column name="praise">
+                <comment>&#207;&#178;&#187;&#182;&#181;&#196;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="fav" type="java.lang.Integer">
+            <column name="fav">
+                <comment>&#202;&#213;&#178;&#216;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="isopen" type="java.lang.Boolean">
+            <column name="isopen" />
+        </property>
+        <property name="uptime" type="java.lang.Integer">
+            <column name="uptime">
+                <comment>&#213;&#185;&#202;&#190;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="createtime" type="java.lang.Integer">
+            <column name="createtime">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="sort" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-23 2:29:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="amani.wechart.platform.dao.entities.AmnProductcate" table="amn_productcate" catalog="amn" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name">
+                <comment>&#183;&#214;&#192;&#224;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="sub" type="int">
+            <column name="sub" not-null="true">
+                <comment>&#203;&#249;&#202;&#244;&#184;&#184;&#192;&#224;</comment>
+            </column>
+        </property>
+        <property name="sort" type="int">
+            <column name="sort" not-null="true">
+                <comment>&#207;&#212;&#202;&#190;&#203;&#179;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="isopen" type="boolean">
+            <column name="isopen" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
