@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-23 2:29:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="amani.wechart.platform.dao.entities.AmnNewsComment" table="amn_news_comment" catalog="amn" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="uid" type="java.lang.Integer">
+            <column name="uid">
+                <comment>&#198;&#192;&#194;&#219;&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="uname" type="string">
+            <column name="uname">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="nid" type="java.lang.Integer">
+            <column name="nid">
+                <comment>&#208;&#194;&#206;&#197;id</comment>
+            </column>
+        </property>
+        <property name="pid" type="java.lang.Integer">
+            <column name="pid">
+                <comment>&#198;&#192;&#194;&#219;&#182;&#212;&#207;&#243;id</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="65535">
+                <comment>&#198;&#192;&#194;&#219;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="praise" type="java.lang.Integer">
+            <column name="praise">
+                <comment>&#214;&#167;&#179;&#214;&#180;&#203;&#198;&#192;&#194;&#219;</comment>
+            </column>
+        </property>
+        <property name="isopen" type="java.lang.Boolean">
+            <column name="isopen">
+                <comment>&#202;&#199;&#183;&#241;&#198;&#244;&#211;&#195;&#198;&#192;&#194;&#219;</comment>
+            </column>
+        </property>
+        <property name="createtime" type="java.lang.Integer">
+            <column name="createtime">
+                <comment>&#183;&#162;&#177;&#237;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

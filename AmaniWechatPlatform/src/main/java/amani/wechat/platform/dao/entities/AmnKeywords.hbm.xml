@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-23 2:29:41 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="amani.wechart.platform.dao.entities.AmnKeywords" table="amn_keywords" catalog="amn" optimistic-lock="version">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>&#208;&#197;&#207;&#162;&#192;&#224;&#208;&#205;(1&#161;&#162;&#206;&#196;&#215;&#214;&#163;&#187;2&#161;&#162;&#205;&#188;&#206;&#196;)</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title">
+                <comment>&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="16777215" />
+        </property>
+        <property name="isopen" type="boolean">
+            <column name="isopen" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#191;&#170;&#198;&#244;</comment>
+            </column>
+        </property>
+        <property name="createtime" type="int">
+            <column name="createtime" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
