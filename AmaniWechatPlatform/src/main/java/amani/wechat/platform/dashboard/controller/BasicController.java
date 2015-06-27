@@ -1,17 +1,28 @@
 package amani.wechat.platform.dashboard.controller;
  
+import java.util.List;
+
+import javax.annotation.Resource;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import amani.wechat.platform.core.mvc.BaseController;
+import amani.wechat.platform.dao.entities.AmnAccount; 
+import amani.wechat.platform.dashboard.services.ITestService;
 
 @Controller
 @RequestMapping("/Basic")
 public class BasicController extends BaseController {
+	@Resource(name="testService")
+	ITestService testService;
+	
 	@RequestMapping("/Index")
 	public String Index(Model model) {
+	 List<AmnAccount> list=	testService.getAllAccount();
+	 
 		return "basic/index";
 	} 
 	 
