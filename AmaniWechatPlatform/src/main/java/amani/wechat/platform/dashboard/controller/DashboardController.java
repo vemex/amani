@@ -3,6 +3,8 @@ package amani.wechat.platform.dashboard.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import amani.wechat.platform.core.mvc.BaseController;
+
 /**
  * 后台默认顶层的ActionController
  * 
@@ -11,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  *
  */
 @Controller
-public class DashboardController {
+public class DashboardController  extends BaseController{
 	@RequestMapping("/Login")
 	public String Login() {
 		return "Login";
