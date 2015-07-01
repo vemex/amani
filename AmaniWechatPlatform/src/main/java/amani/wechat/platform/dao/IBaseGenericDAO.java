@@ -2,9 +2,9 @@
  * 
  * @author zyong
  *
- * @date 2009-9-19 ÏÂÎç11:02:34
+ * @date 2009-9-19 ä¸‹åˆ11:02:34
  *
- * @action Ò»¸ö¼òµ¥¹«¹²µÄhibernateÍ¨ÓÃdaoÊµÏÖÀà
+ * @action ä¸€ä¸ªç®€å•å…¬å…±çš„hibernateé€šç”¨daoå®ç°ç±»
  */
 package amani.wechat.platform.dao;
 
@@ -22,15 +22,15 @@ import org.hibernate.criterion.DetachedCriteria;
  * 
  * @author zyong
  * 
- * @action Ò»¸öÍ¨ÓÃµÄHibernateµÄdao½Ó¿Ú<br>
- *         Êı¾İ·ÃÎÊ²ãÀïÃæµÄÃ¿Ò»¸ö½Ó¿Ú¶¼Ó¦¸Ã¼Ì³ĞÕâ¸ö½Ó¿Ú<br>
- *         ¶ø²»ÓÃÖØĞ´ÀïÃæµÄ·½·¨
+ * @action ä¸€ä¸ªé€šç”¨çš„Hibernateçš„daoæ¥å£<br>
+ *         æ•°æ®è®¿é—®å±‚é‡Œé¢çš„æ¯ä¸€ä¸ªæ¥å£éƒ½åº”è¯¥ç»§æ‰¿è¿™ä¸ªæ¥å£<br>
+ *         è€Œä¸ç”¨é‡å†™é‡Œé¢çš„æ–¹æ³•
  */
 public interface IBaseGenericDAO<E extends Serializable, PK extends Serializable> {
 
 	/**
 	 * 
-	 * ¸ÃÃ¶¾ÙÀàĞÍÓÃÓÚ,getStackValue·½·¨ÖĞµÄStackÃ¶¾Ù
+	 * è¯¥æšä¸¾ç±»å‹ç”¨äº,getStackValueæ–¹æ³•ä¸­çš„Stackæšä¸¾
 	 * 
 	 */
 	enum Stack {
@@ -40,221 +40,221 @@ public interface IBaseGenericDAO<E extends Serializable, PK extends Serializable
 	/**
 	 * 
 	 * @param id
-	 *            ¸ù¾İÖ÷¼ü²éÑ¯Ò»¸öÊµÌå
-	 * @return Ò»¸öÊµÌå¶ÔÏó
+	 *            æ ¹æ®ä¸»é”®æŸ¥è¯¢ä¸€ä¸ªå®ä½“
+	 * @return ä¸€ä¸ªå®ä½“å¯¹è±¡
 	 */
 	E get(PK id);
 
 	/**
 	 * 
 	 * @param id
-	 *            ¸ù¾İÖ÷¼ü²éÑ¯Ò»¸öÊµÌå
+	 *            æ ¹æ®ä¸»é”®æŸ¥è¯¢ä¸€ä¸ªå®ä½“
 	 * @param lock
-	 *            ¼ÓËøÊµÌå
-	 * @return Ò»¸öÊµÌå¶ÔÏó
+	 *            åŠ é”å®ä½“
+	 * @return ä¸€ä¸ªå®ä½“å¯¹è±¡
 	 */
 	E get(PK id, LockMode lock);
 
 	/**
-	 * Ê¹ÓÃÊı¾İ¿âº¯Êı
+	 * ä½¿ç”¨æ•°æ®åº“å‡½æ•°
 	 * 
 	 * @param criteria
-	 *            Ò»¸öDetacherCriteria¶ÔÏó
+	 *            ä¸€ä¸ªDetacherCriteriaå¯¹è±¡
 	 * @param propertyName
-	 *            ÊµÌåÀàÊôĞÔÃû
+	 *            å®ä½“ç±»å±æ€§å
 	 * @param stackName
-	 *            StackÃ¶¾ÙÀàĞÍÖĞµÄÈÎÒâÒ»¸ö
-	 * @return Ò»ĞĞÒ»ÁĞÊı¾İ¿â
+	 *            Stackæšä¸¾ç±»å‹ä¸­çš„ä»»æ„ä¸€ä¸ª
+	 * @return ä¸€è¡Œä¸€åˆ—æ•°æ®åº“
 	 */
 	Object getStackValue(DetachedCriteria criteria, String propertyName,
 			String stackName);
 
 	/**
-	 * ²éÑ¯Êı¾İ¿â¶ÔÓ¦µÄ¼ÇÂ¼Êı
+	 * æŸ¥è¯¢æ•°æ®åº“å¯¹åº”çš„è®°å½•æ•°
 	 * 
 	 * @param criteria
-	 *            Ò»¸öDetachedCriteria¶ÔÏó
-	 * @return ¼ÇÂ¼Êı
+	 *            ä¸€ä¸ªDetachedCriteriaå¯¹è±¡
+	 * @return è®°å½•æ•°
 	 */
 	Integer getRowCount(DetachedCriteria criteria);
 
 	/**
 	 * 
 	 * @param id
-	 *            ¸ù¾İÖ÷¼ü¼Ó²ÃÒ»¸öÊµÌå¶ÔÏó
-	 * @return Ò»¸öÊµÌå¶ÔÏó
+	 *            æ ¹æ®ä¸»é”®åŠ è£ä¸€ä¸ªå®ä½“å¯¹è±¡
+	 * @return ä¸€ä¸ªå®ä½“å¯¹è±¡
 	 */
 	E load(PK id);
 
 	/**
 	 * 
 	 * @param id
-	 *            ¸ù¾İÖ÷¼ü¼Ó²ÃÊµÌå
+	 *            æ ¹æ®ä¸»é”®åŠ è£å®ä½“
 	 * @param lock
-	 *            ¼ÓËøÊµÌå
-	 * @return Ò»¸öÊµÌå¶ÔÏó
+	 *            åŠ é”å®ä½“
+	 * @return ä¸€ä¸ªå®ä½“å¯¹è±¡
 	 */
 	E load(PK id, LockMode lock);
 
 	/**
 	 * 
-	 * @return ¼Ó²ÃËùÓĞ¶ÔÏó
+	 * @return åŠ è£æ‰€æœ‰å¯¹è±¡
 	 */
 	List<E> loadAll();
 
 	/**
 	 * 
 	 * @param entity
-	 *            ±£´æÒ»¸öÊµÌå
+	 *            ä¿å­˜ä¸€ä¸ªå®ä½“
 	 * @throws HibernateException
-	 *             Å×³öExceptionÒì³£
+	 *             æŠ›å‡ºExceptionå¼‚å¸¸
 	 */
 	void save(E entity) throws HibernateException;
 
 	/**
 	 * 
 	 * @param entity
-	 *            É¾³ıÒ»¸öÊµÌå
+	 *            åˆ é™¤ä¸€ä¸ªå®ä½“
 	 * @throws HibernateException
-	 *             Å×³öÒì³£
+	 *             æŠ›å‡ºå¼‚å¸¸
 	 */
 	void delete(E entity) throws HibernateException;
 
 	/**
 	 * 
 	 * @param entity
-	 *            É¾³ıÒ»¸öÊµÌå
+	 *            åˆ é™¤ä¸€ä¸ªå®ä½“
 	 * @param lock
-	 *            ¼ÓËøÊµÌå
+	 *            åŠ é”å®ä½“
 	 * @throws HibernateException
-	 *             Å×³öÒì³£
+	 *             æŠ›å‡ºå¼‚å¸¸
 	 */
 	void delete(E entity, LockMode lock) throws HibernateException;
 
 	/**
 	 * 
 	 * @param entitys
-	 *            É¾³ı¶à¸öÊµÌå
+	 *            åˆ é™¤å¤šä¸ªå®ä½“
 	 * @throws HibernateException
-	 *             Å×³öÒì³£
+	 *             æŠ›å‡ºå¼‚å¸¸
 	 */
 	void delete(Collection<E> entitys) throws HibernateException;
 
 	/**
 	 * 
 	 * @param entity
-	 *            ĞŞ¸ÄÒ»¸öÊµÌå
+	 *            ä¿®æ”¹ä¸€ä¸ªå®ä½“
 	 * @throws HibernateException
-	 *             Å×³öÒì³£
+	 *             æŠ›å‡ºå¼‚å¸¸
 	 */
 	void update(E entity) throws HibernateException;
 
 	/**
 	 * 
 	 * @param entity
-	 *            ĞŞ¸ÄÒ»¸öÊµÌå
+	 *            ä¿®æ”¹ä¸€ä¸ªå®ä½“
 	 * @param lock
-	 *            ¼ÓËøÊµÌå
+	 *            åŠ é”å®ä½“
 	 * @throws HibernateException
-	 *             Å×³öÒì³£
+	 *             æŠ›å‡ºå¼‚å¸¸
 	 */
 	void update(E entity, LockMode lock) throws HibernateException;
 
 	/**
 	 * 
 	 * @param entity
-	 *            µ±ÊµÌåÔÚÊı¾İ¿â²»ÔÚÔÚÓëÖ®¶ÔÓ¦¼ÇÂ¼Ê±,Ôò±£´æÊµÌå,ÔÚÔÚÊµÌå,Ôò¸üĞÂÊµÌå
+	 *            å½“å®ä½“åœ¨æ•°æ®åº“ä¸åœ¨åœ¨ä¸ä¹‹å¯¹åº”è®°å½•æ—¶,åˆ™ä¿å­˜å®ä½“,åœ¨åœ¨å®ä½“,åˆ™æ›´æ–°å®ä½“
 	 * @throws HibernateException
-	 *             Å×³öÒì³£
+	 *             æŠ›å‡ºå¼‚å¸¸
 	 */
 	void saveOrUpdate(E entity) throws HibernateException;
 
 	/**
 	 * 
 	 * @param entitys
-	 *            ±£´æ¶à¸öÊµÌå
+	 *            ä¿å­˜å¤šä¸ªå®ä½“
 	 * @throws HibernateException
-	 *             Å×³öÒì³£
+	 *             æŠ›å‡ºå¼‚å¸¸
 	 */
 	void saveOrUpdate(Collection<E> entitys) throws HibernateException;
 
-	/*---------------------------ÀûÓÃhql,sql¶ÔÊı¾İ¿â½øĞĞ²Ù×÷--------------------------------*/
+	/*---------------------------åˆ©ç”¨hql,sqlå¯¹æ•°æ®åº“è¿›è¡Œæ“ä½œ--------------------------------*/
 
 	/**
 	 * 
 	 * @param hql
-	 *            Ê¹ÓÃhqlÓï¾ä½øĞĞÊı¾İ¿âÔöÉ¾¸Ä²Ù×÷
-	 * @return ÊÜÓ°ÏìĞĞµÄ¼ÇÂ¼Êı
+	 *            ä½¿ç”¨hqlè¯­å¥è¿›è¡Œæ•°æ®åº“å¢åˆ æ”¹æ“ä½œ
+	 * @return å—å½±å“è¡Œçš„è®°å½•æ•°
 	 */
 	Integer bulkUpdate(String hql);
 
 	/**
 	 * 
 	 * @param hql
-	 *            Ê¹ÓÃhqlÓï¾ä½øĞĞÊı¾İ¿âÔöÉ¾¸Ä²Ù×÷
+	 *            ä½¿ç”¨hqlè¯­å¥è¿›è¡Œæ•°æ®åº“å¢åˆ æ”¹æ“ä½œ
 	 * @param params
-	 *            hqlÓï¾ä²ÎÊı
-	 * @return ÊÜÓ°ÏìĞĞµÄ¼ÇÂ¼Êı
+	 *            hqlè¯­å¥å‚æ•°
+	 * @return å—å½±å“è¡Œçš„è®°å½•æ•°
 	 */
 	Integer bulkUpdate(String hql, Object... values);
 
 	/**
 	 * 
 	 * @param hql
-	 *            Ê¹ÓÃhqlÓï¾ä,¼ìË÷Êı¾İ
-	 * @return Ò»¸ölist¼¯ºÏ
+	 *            ä½¿ç”¨hqlè¯­å¥,æ£€ç´¢æ•°æ®
+	 * @return ä¸€ä¸ªlisté›†åˆ
 	 */
 	List<E> find(String hql);
 
 	/**
 	 * 
 	 * @param hql
-	 *            Ê¹ÓÃhqlÓï¾ä,¼ìË÷Êı¾İ
+	 *            ä½¿ç”¨hqlè¯­å¥,æ£€ç´¢æ•°æ®
 	 * @param params
-	 *            hqlÓï¾ä²ÎÊı
-	 * @return Ò»¸ölist¼¯ºÏ
+	 *            hqlè¯­å¥å‚æ•°
+	 * @return ä¸€ä¸ªlisté›†åˆ
 	 */
 	List<E> find(String hql, Object... values);
 
 	/**
 	 * 
 	 * @param queryName
-	 *            Ê¹ÓÃÃüÃûµÄhqlÓï¾ä½øĞĞ²éÑ¯
-	 * @return Ò»¸ölist¼¯ºÏ
+	 *            ä½¿ç”¨å‘½åçš„hqlè¯­å¥è¿›è¡ŒæŸ¥è¯¢
+	 * @return ä¸€ä¸ªlisté›†åˆ
 	 */
 	List<E> findByNamedQuery(String queryName);
 
 	/**
 	 * 
 	 * @param queryName
-	 *            Ê¹ÓÃ´ø²ÎÊıµÄÃüÃûhqlÓï¾ä½øĞĞ²éÑ¯
+	 *            ä½¿ç”¨å¸¦å‚æ•°çš„å‘½åhqlè¯­å¥è¿›è¡ŒæŸ¥è¯¢
 	 * @param values
-	 *            ²ÎÊı¼¯ºÏ
-	 * @return Ò»¸ölist¼¯ºÏ
+	 *            å‚æ•°é›†åˆ
+	 * @return ä¸€ä¸ªlisté›†åˆ
 	 */
 	List<E> findByNamedQuery(String queryName, Object... values);
 
 	/**
 	 * 
 	 * @param queryName
-	 *            Ê¹ÓÃ´ø²ÎÊıµÄÃüÃûhqlÓï¾ä½øĞĞ²éÑ¯
+	 *            ä½¿ç”¨å¸¦å‚æ•°çš„å‘½åhqlè¯­å¥è¿›è¡ŒæŸ¥è¯¢
 	 * @param params
-	 *            ²ÎÊı¼¯ºÏ<br>
-	 *            MapµÄ¼üÎª²ÎÊıÃû³Æ¼´paramName<br>
-	 *            MapµÄÖµÔòÎªvalues
-	 * @return Ò»¸ölist¼¯ºÏ
+	 *            å‚æ•°é›†åˆ<br>
+	 *            Mapçš„é”®ä¸ºå‚æ•°åç§°å³paramName<br>
+	 *            Mapçš„å€¼åˆ™ä¸ºvalues
+	 * @return ä¸€ä¸ªlisté›†åˆ
 	 */
 	List<E> findByNamedParam(String queryName, Map<String, Object> params);
 
 	/**
 	 * 
 	 * @param queryName
-	 *            Ê¹ÓÃ´ø²ÎÊıµÄÃüÃûhqlÓï¾ä½øĞĞ²éÑ¯
+	 *            ä½¿ç”¨å¸¦å‚æ•°çš„å‘½åhqlè¯­å¥è¿›è¡ŒæŸ¥è¯¢
 	 * @param params
-	 *            ²ÎÊı¼¯ºÏ<br>
-	 *            MapµÄ¼üÎª²ÎÊıÃû³Æ¼´paramName<br>
-	 *            MapµÄÖµÔòÎªvalues
-	 * @return Ò»¸ölist¼¯ºÏ
+	 *            å‚æ•°é›†åˆ<br>
+	 *            Mapçš„é”®ä¸ºå‚æ•°åç§°å³paramName<br>
+	 *            Mapçš„å€¼åˆ™ä¸ºvalues
+	 * @return ä¸€ä¸ªlisté›†åˆ
 	 */
 	List<E> findByNamedQueryAndNamedParam(String queryName,
 			Map<String, Object> params);
@@ -262,57 +262,57 @@ public interface IBaseGenericDAO<E extends Serializable, PK extends Serializable
 	/**
 	 * 
 	 * @param criteria
-	 *            Ê¹ÓÃÖ¸¶¨µÄ¼ìË÷±ê×¼À´¼ìË÷Êı
-	 * @return Ò»¸ölist¼¯ºÏ
+	 *            ä½¿ç”¨æŒ‡å®šçš„æ£€ç´¢æ ‡å‡†æ¥æ£€ç´¢æ•°
+	 * @return ä¸€ä¸ªlisté›†åˆ
 	 */
 	List<E> findByCriteria(DetachedCriteria criteria);
 
 	/**
 	 * 
 	 * @param criteria
-	 *            Ê¹ÓÃÖ¸¶¨µÄ¼ìË÷±ê×¼À´·ÖÒ³¼ìË÷Êı¾İ
+	 *            ä½¿ç”¨æŒ‡å®šçš„æ£€ç´¢æ ‡å‡†æ¥åˆ†é¡µæ£€ç´¢æ•°æ®
 	 * @param firstResult
-	 *            ¿ªÊ¼ÌõÊı
+	 *            å¼€å§‹æ¡æ•°
 	 * @param maxResults
-	 *            ·µ»Ø¼ÇÂ¼Êı
-	 * @return Ò»¸ölist¼¯ºÏ
+	 *            è¿”å›è®°å½•æ•°
+	 * @return ä¸€ä¸ªlisté›†åˆ
 	 */
 	List<E> findByCriteria(DetachedCriteria criteria, Integer firstResult,
 			Integer maxResults);
 
 	/**
-	 * ¼ÓËøÖ¸¶¨µÄÊµÌå
+	 * åŠ é”æŒ‡å®šçš„å®ä½“
 	 * 
 	 * @param entity
-	 *            ÊµÌå¶ÔÏó
+	 *            å®ä½“å¯¹è±¡
 	 * 
 	 * @param lock
-	 *            ¼ÓËø
+	 *            åŠ é”
 	 */
 	void lock(E entity, LockMode lock) throws HibernateException;
 
 	/**
-	 * Ç¿ÖÆÁ¢¼´¸üĞÂµ½Êı¾İ¿â,·ñÔòĞèÒªÊÂÎñÌá½»ºó,²Å»áÌá½»µ½Êı¾İ¿â
+	 * å¼ºåˆ¶ç«‹å³æ›´æ–°åˆ°æ•°æ®åº“,å¦åˆ™éœ€è¦äº‹åŠ¡æäº¤å,æ‰ä¼šæäº¤åˆ°æ•°æ®åº“
 	 */
 	void flush() throws HibernateException;
 
 	/**
 	 * 
-	 * @return ¸ù¾İSimpleDao·ºĞÍÀàĞÍ,´´½¨Ò»¸öÓë»á»°ÎŞ¹ØµÄ¼ìË÷¶ÔÏó
+	 * @return æ ¹æ®SimpleDaoæ³›å‹ç±»å‹,åˆ›å»ºä¸€ä¸ªä¸ä¼šè¯æ— å…³çš„æ£€ç´¢å¯¹è±¡
 	 */
 	DetachedCriteria createDetachedCriteria();
 
 	/**
 	 * 
 	 * @param c
-	 *            ÎªÒ»¸öÊµÌåÀàĞÍ
-	 * @return ¸ù¾İÖ¸¶¨µÄÀàĞÍ´´½¨Ò»¸öÓë»á»°ÎŞ¹ØµÄ¼ìË÷¶ÔÏó
+	 *            ä¸ºä¸€ä¸ªå®ä½“ç±»å‹
+	 * @return æ ¹æ®æŒ‡å®šçš„ç±»å‹åˆ›å»ºä¸€ä¸ªä¸ä¼šè¯æ— å…³çš„æ£€ç´¢å¯¹è±¡
 	 */
 	DetachedCriteria createDetachedCriteria(Class<? extends Serializable> c);
 
 	/**
 	 * 
-	 * @return ´´½¨Óë»á»°°ó¶¨µÄ¼ìË÷±ê×¼¶ÔÏó
+	 * @return åˆ›å»ºä¸ä¼šè¯ç»‘å®šçš„æ£€ç´¢æ ‡å‡†å¯¹è±¡
 	 */
 	Criteria createCriteria();
 

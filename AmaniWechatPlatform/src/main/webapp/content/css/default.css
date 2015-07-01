@@ -1,0 +1,16 @@
+/* CSS Document */
+/*项目列表开始*/
+body { font-size:12px; }
+.itemListBoxs table { border-spacing:1px !important;border-collapse:separate; }
+.itemListBoxs { width:100%;float:left; }
+.itemListBoxs .itemTitleTr { height:30px;line-height:30px;background:#fff url(../images/windows-bg1.gif) repeat-x; }
+.itemListBoxs .itemTitleTr:hover { background-position:0px -10px; }
+.itemListBoxs .itemTitleTr td div { white-space:nowrap;font-size:12px; }
+.itemListBoxs .itemTitleTr td { padding:0px 10px;font-weight:bold;color:#444; }
+.itemListBoxs .listTr { background:#FFF;color:#333;font-family:'宋体'; }
+.itemListBoxs .listTr:hover { background:#F6F6F6;color:#FF3300; }
+.itemListBoxs .listTr td { padding:8px; }
+.itemListBoxs .listTr td div { white-space:nowrap; }
+.itemListBoxs .listTr td a { text-decoration:underline; }
+.itemListBoxs .listPageTr td { padding:15px 20px;text-align:center;background:#FFF; }
+

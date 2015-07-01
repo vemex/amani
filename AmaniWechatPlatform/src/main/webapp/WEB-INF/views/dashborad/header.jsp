@@ -7,12 +7,12 @@
 <title>微信公众平台管理后台--五五来客</title>
 <meta name="description" content="微信公众平台管理后台--五五来客" />
 <meta name="keywords" content="微信公众平台管理后台--五五来客" />
-<link href="${ROOT_PATH }content/css/common.css" type="text/css"
+<link href="${ROOT_PATH }content/css/admin/common.css" type="text/css"
 	rel="stylesheet" />
 <script type="text/javascript"
 	src="${ROOT_PATH }content/scripts/jquery.js"></script>
 <script type="text/javascript"
-	src="${ROOT_PATH }content/scripts/artDialog/jquery.artDialog.js"></script>
+	src="${ROOT_PATH }content/scripts/artDialog/jquery.artDialog.js?skin=default"></script>
 <script type="text/javascript"
 	src="${ROOT_PATH }content/scripts/artDialog/artDialog.iframeTools.js"></script>
 <script type="text/javascript"

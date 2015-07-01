@@ -13,11 +13,9 @@
    						http://www.springframework.org/schema/mvc  
                         http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd">
 	<!-- 自动扫描 -->
-	<context:annotation-config />
-	<context:component-scan base-package="amani.wechat.platform.dao" />
-	<context:component-scan base-package="amani.wechat.platform.dao.impl" />
-	<context:component-scan base-package="amani.wechat.platform.dashboard.services" />
-	<context:component-scan base-package="amani.wechat.platform.dashboard.services.impl" />
+	<context:annotation-config /> 
+	<context:component-scan base-package="amani.wechat.platform.dao.impl" /> 
+	<context:component-scan base-package="amani.wechat.platform.services.impl" />
 	<aop:aspectj-autoproxy />
 </beans>
 	

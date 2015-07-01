@@ -2,9 +2,9 @@
  * 
  * @author zyong
  *
- * @date 2009-9-19 ÏÂÎç11:02:34
+ * @date 2009-9-19 ï¿½ï¿½ï¿½ï¿½11:02:34
  *
- * @action Ò»¸ö¼òµ¥¹«¹²µÄhibernateÍ¨ÓÃdaoÊµÏÖÀà
+ * @action Ò»ï¿½ï¿½ï¿½òµ¥¹ï¿½ï¿½ï¿½ï¿½ï¿½hibernateÍ¨ï¿½ï¿½daoÊµï¿½ï¿½ï¿½ï¿½
  */
 package amani.wechat.platform.dao.impl;
 
@@ -31,25 +31,27 @@ import amani.wechat.platform.dao.IBaseGenericDAO;;
  * 
  * @author zyong
  * 
- * @action Ò»¸ö¹«¹²µÄHibernateÍ¨ÓÃdaoÊµÏÖÀà<br>
- *         Êı¾İ¿â·ÃÎÊ²ã,Ã¿Ò»¸öÊµÏÖÀà¶¼Ó¦¸ÃÀ´¼Ì³Ğ¸ÃÀà<br>
- *         ²»Ó¦¸ÃÖØĞ´ÀïÃæµÄ·½·¨,ĞèÒªÏàÓ¦µÄ·½·¨,Ö±½Óµ½Êı¾İ·ÃÎÊ²ãÃ¿¸öÀà¶ÔÓ¦µÄ½Ó¿ÚÖĞÌí¼Ó
+ * @action Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½HibernateÍ¨ï¿½ï¿½daoÊµï¿½ï¿½ï¿½ï¿½<br>
+ *         ï¿½ï¿½İ¿ï¿½ï¿½ï¿½Ê²ï¿½,Ã¿Ò»ï¿½ï¿½Êµï¿½ï¿½ï¿½à¶¼Ó¦ï¿½ï¿½ï¿½ï¿½ï¿½Ì³Ğ¸ï¿½ï¿½ï¿½<br>
+ *         ï¿½ï¿½Ó¦ï¿½ï¿½ï¿½ï¿½Ğ´ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½,ï¿½ï¿½Òªï¿½ï¿½Ó¦ï¿½Ä·ï¿½ï¿½ï¿½,Ö±ï¿½Óµï¿½ï¿½ï¿½İ·ï¿½ï¿½Ê²ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½Ó¦ï¿½Ä½Ó¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
  */
 public class HibernateBaseGenericDAOImpl<E extends Serializable, PK extends Serializable>
 		extends HibernateDaoSupport implements IBaseGenericDAO<E, PK> {
 
 	@Resource(name = "sessionFactory")
 	public void setSuperSessionFactory(SessionFactory sessionFactory){
-	super.setSessionFactory(sessionFactory);
+	
+		super.setSessionFactory(sessionFactory);
 	}
 	
+	
 	/**
-	 * ÎªE¶ÔÓ¦µÄÊµÀıÀàĞÍ
+	 * ÎªEï¿½ï¿½Ó¦ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	private Class<?> entityClass;
 
 	/**
-	 * »ñÈ¡EÊµÀıÀàµÄÀàĞÍ
+	 * ï¿½ï¿½È¡EÊµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	 */
 	public HibernateBaseGenericDAOImpl() {
 		Class<?> c = this.getClass();
@@ -70,7 +72,7 @@ public class HibernateBaseGenericDAOImpl<E extends Serializable, PK extends Seri
 		E entity = (E) this.getHibernateTemplate().get(this.entityClass, id,
 				lock);
 		if (entity != null) {
-			this.flush();// Èç¹ûÊµÌå²»Îªnull,Á¢¼´Ë¢ĞÂ,·ñÔòËø²»»áÉúĞ§
+			this.flush();// ï¿½ï¿½ï¿½Êµï¿½å²»Îªnull,ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§
 		}
 		return entity;
 	}
@@ -109,7 +111,7 @@ public class HibernateBaseGenericDAOImpl<E extends Serializable, PK extends Seri
 		E entity = (E) this.getHibernateTemplate().load(this.entityClass, id,
 				lock);
 		if (entity != null) {
-			this.flush();// Èç¹ûÊµÌå²»Îªnull,Á¢¼´Ë¢ĞÂ,·ñÔòËø²»»áÉúĞ§
+			this.flush();// ï¿½ï¿½ï¿½Êµï¿½å²»Îªnull,ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§
 		}
 		return entity;
 	}
@@ -185,7 +187,7 @@ public class HibernateBaseGenericDAOImpl<E extends Serializable, PK extends Seri
 
 	public void delete(E entity, LockMode lock) throws HibernateException {
 		this.getHibernateTemplate().delete(entity, lock);
-		this.flush();// Èç¹ûÊµÌå²»Îªnull,Á¢¼´Ë¢ĞÂ,·ñÔòËø²»»áÉúĞ§
+		this.flush();// ï¿½ï¿½ï¿½Êµï¿½å²»Îªnull,ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§
 	}
 
 	public void delete(Collection<E> entitys) throws HibernateException {
@@ -198,7 +200,7 @@ public class HibernateBaseGenericDAOImpl<E extends Serializable, PK extends Seri
 
 	public void update(E entity, LockMode lock) throws HibernateException {
 		this.getHibernateTemplate().update(entity, lock);
-		this.flush();// Èç¹ûÊµÌå²»Îªnull,Á¢¼´Ë¢ĞÂ,·ñÔòËø²»»áÉúĞ§
+		this.flush();// ï¿½ï¿½ï¿½Êµï¿½å²»Îªnull,ï¿½ï¿½ï¿½ï¿½Ë¢ï¿½ï¿½,ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ğ§
 	}
 
 	public Integer bulkUpdate(String hql) {

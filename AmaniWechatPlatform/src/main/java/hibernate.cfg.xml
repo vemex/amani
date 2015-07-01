@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/amn</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.search.autoregister_listeners">false</property>
+        <property name="hibernate.validator.apply_to_ddl">false</property>
+        <mapping class="study.hibenate.entity.AmnMpages" />
+        <mapping class="study.hibenate.entity.AmnProductKeys" />
+        <mapping class="study.hibenate.entity.AmnProductAlbum" />
+        <mapping class="study.hibenate.entity.AmnConfigs" />
+        <mapping class="study.hibenate.entity.AmnMessage" />
+        <mapping class="study.hibenate.entity.AmnMenu" />
+        <mapping class="study.hibenate.entity.AmnNewsPic" />
+        <mapping class="study.hibenate.entity.AmnMaterial" />
+        <mapping class="study.hibenate.entity.AmnProduct" />
+        <mapping class="study.hibenate.entity.AmnProductRelevance" />
+        <mapping class="study.hibenate.entity.AmnNewsComment" />
+        <mapping class="study.hibenate.entity.AmnProductcate" />
+        <mapping class="study.hibenate.entity.AmnReply" />
+        <mapping class="study.hibenate.entity.AmnBarcode" />
+        <mapping class="study.hibenate.entity.AmnOrdersItem" />
+        <mapping class="study.hibenate.entity.AmnGroups" />
+        <mapping class="study.hibenate.entity.AmnNewsCate" />
+        <mapping class="study.hibenate.entity.AmnKeywords" />
+        <mapping class="study.hibenate.entity.AmnAccount" />
+        <mapping class="study.hibenate.entity.AmnAccessStatistics" />
+        <mapping class="study.hibenate.entity.AmnCart" />
+        <mapping class="study.hibenate.entity.AmnNews" />
+        <mapping class="study.hibenate.entity.AmnUser" />
+        <mapping class="study.hibenate.entity.AmnSysmenu" />
+        <mapping class="study.hibenate.entity.AmnCard" />
+        <mapping class="study.hibenate.entity.AmnOrders" />
+        <mapping class="study.hibenate.entity.AmnSms" />
+    </session-factory>
+</hibernate-configuration>

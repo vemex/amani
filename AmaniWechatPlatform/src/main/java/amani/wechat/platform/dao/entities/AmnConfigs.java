@@ -126,7 +126,7 @@ public class AmnConfigs implements java.io.Serializable {
 		this.mchid = mchid;
 	}
 
-	@Column(name = "key")
+	@Column(name = "`key`")
 	public String getKey() {
 		return this.key;
 	}

@@ -28,7 +28,7 @@ public class AuthcationActionInterceptor extends HandlerInterceptorAdapter {
         }
         if (!flag) { 
         	flag=true;
-        	response.getWriter().print("Not login");
+        	//response.getWriter().print("Not login");
         }
         return flag;
     }

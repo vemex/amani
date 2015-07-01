@@ -16,19 +16,19 @@
 			</ul>
 		</div>
 		<div class="formBoxs admin_table">
-			<form action="" id="customerForm" name="customerForm" method="post">
+			<form action="${ROOT_PATH }Dashboard/Basic/AccountSet/Post" id="customerForm" name="customerForm" method="post">
 				<table width="100%" border="0" cellspacing="1" cellpadding="5">
 					<tr class="tr1 vt">
 						<td width="11%" align="right" class="td1"><span class="red">*</span>
 							Token：</td>
 						<td width="89%" class="td2"><input id="token"
-							class="lk-input" name="token" value="amani" style="width: 500px;" />&nbsp;&nbsp;<span>对应微信公众帐号中设置的Token,必须和微信帐号中设置的统一</span></td>
+							class="lk-input" name="token" value="${WXConfiguration.token }" style="width: 500px;" />&nbsp;&nbsp;<span>对应微信公众帐号中设置的Token,必须和微信帐号中设置的统一</span></td>
 					</tr>
 					<tr class="tr1 vt">
 						<td width="11%" align="right" class="td1"><span class="red">*</span>
 							AppId：</td>
 						<td width="89%" class="td2" id="editorBoxs"><input id="appid"
-							class="lk-input" value="wx189c401d4b06648f" name="appid"
+							class="lk-input" value="${WXConfiguration.appid }" name="appid"
 							style="width: 500px;" />&nbsp;&nbsp;<span>对应微信公众帐号中生成的AppId</span></td>
 					</tr>
 					<tr class="tr1 vt">
@@ -36,21 +36,21 @@
 							AppSecret：</td>
 						<td width="89%" class="td2" id="editorBoxs"><input
 							id="appsecret" class="lk-input"
-							value="7a6411ec869f02606e1caaf30e8a878f" name="appsecret"
+							value="${WXConfiguration.appsecret }" name="appsecret"
 							style="width: 500px;" />&nbsp;&nbsp;<span>对应微信公众帐号中生成的AppSecret</span></td>
 					</tr>
 					<tr class="tr1 vt">
 						<td width="11%" align="right" class="td1"><span class="red">*</span>
 							微信支付商户号：</td>
 						<td width="89%" class="td2" id="editorBoxs"><input id="mchid"
-							class="lk-input" value="1223415001" name="mchid"
+							class="lk-input" value="${WXConfiguration.mchid }" name="mchid"
 							style="width: 500px;" />&nbsp;&nbsp;<span>对应微信支付中的商户号</span></td>
 					</tr>
 					<tr class="tr1 vt">
 						<td width="11%" align="right" class="td1"><span class="red">*</span>
 							Key：</td>
 						<td width="89%" class="td2" id="editorBoxs"><input id="key"
-							class="lk-input" value="00928a92cd17c54a69731ce0c5ceaa99"
+							class="lk-input" value="${WXConfiguration.key }"
 							name="key" style="width: 500px;" />&nbsp;&nbsp;<span>对应微信支付中的商户支付密钥Key</span></td>
 					</tr>
 					<tr class="tr1 vt">
@@ -95,8 +95,9 @@
 							var options = {
 								beforeSubmit : function() {
 								},
-								success : function(txt) {
-									if (txt == 1) {
+								success : function(responseTxt) {
+									var json= jQuery.parseJSON(responseTxt);
+									if (json.isSuccessed) {
 										altTip('信息更新成功！', 'succeed',
 												function() {
 													location.reload();
