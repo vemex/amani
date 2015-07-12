@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="sysSendMsg" class="com.amani.tools.SysSendMsg">
+	</bean>
+	<bean id="dataTool" class="com.amani.tools.DataTool">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+		<property name="amn_Dao" ref="amn_Dao"></property>
+		<property name="sysSendMsg" ref="sysSendMsg"></property>
+	</bean>
+	<!--  <bean id="fingerTool" class="com.amani.tools.FingerTool">
+	</bean>-->
+	<bean id="handTimerEvent" class="com.amani.services.HandTimerEvent">
+	</bean>
+</beans>

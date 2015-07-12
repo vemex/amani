@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd
+		   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+		   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd"
+	default-autowire="byName">
+	
+	<bean id="dataSourceA3" class="org.logicalcobwebs.proxool.ProxoolDataSource" >
+		<property name="driver">
+			<value>net.sourceforge.jtds.jdbc.Driver</value>
+			<!-- <value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value> -->
+		
+		</property>
+		<property name="driverUrl">
+			<value>jdbc:jtds:sqlserver://localhost:51322/MasterDatabase2014</value>
+		</property>
+		<property name="user" value="sa" />
+		<property name="password" value="123456" />
+		
+		<property name="alias" value="Pool_A3" />
+		<property name="maximumActiveTime" value="20000000" />
+		<property name="prototypeCount" value="0" />
+		<property name="maximumConnectionCount" value="200" />
+		<property name="minimumConnectionCount" value="8" />
+		<property name="simultaneousBuildThrottle" value="50" />
+		<property name="houseKeepingTestSql" value="select getdate()" />
+	</bean>
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSourceA3" />
+		</property>
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+	</bean>
+	
+	<!-- 配置事务管理器 -->
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="transactionInterceptor"
+		class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<!--  事务拦截器bean需要依赖注入一个事务管理器 -->
+		<property name="transactionManager" ref="transactionManager" />
+		<property name="transactionAttributes">
+			<!--  下面定义事务传播属性-->
+			<props>
+				
+				<prop key="post*">PROPAGATION_REQUIRED</prop>
+				<prop key="afterpost">PROPAGATION_REQUIRED</prop>
+				<prop key="delete">PROPAGATION_REQUIRED</prop>
+				<prop key="update">PROPAGATION_REQUIRED</prop>
+				<prop key="save*">PROPAGATION_REQUIRED</prop>
+
+			</props>
+		</property>
+	</bean>
+    <!-- 定义BeanNameAutoProxyCreator-->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+	    <!--  指定对满足哪些bean name的bean自动生成业务代理 -->
+	      <!--  下面是所有需要自动创建事务代理的bean-->
+        <!--  
+	    <property name="beanNames">
+            <list>
+            	
+ 		    </list>
+           
+	    </property>
+	    -->
+        <!--  下面定义BeanNameAutoProxyCreator所需的事务拦截器-->
+        <property name="interceptorNames">
+            <list>
+                <!-- 此处可增加其他新的Interceptor -->
+                <value>transactionInterceptor</value> 
+                <value>transactionInterceptor_PAD</value> 
+            </list>
+        </property>
+    </bean>
+	<context:annotation-config />
+
+	<context:component-scan base-package="com.amani" />
+
+
+</beans>

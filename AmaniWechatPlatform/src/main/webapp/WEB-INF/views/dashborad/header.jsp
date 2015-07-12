@@ -10,7 +10,7 @@
 <link href="${ROOT_PATH }content/css/admin/common.css" type="text/css"
 	rel="stylesheet" />
 <script type="text/javascript"
-	src="${ROOT_PATH }content/scripts/jquery.js"></script>
+	src="${ROOT_PATH }content/scripts/jquery.js"></script> 
 <script type="text/javascript"
 	src="${ROOT_PATH }content/scripts/artDialog/jquery.artDialog.js?skin=default"></script>
 <script type="text/javascript"
@@ -21,7 +21,7 @@
 	src="${ROOT_PATH }content/scripts/jquery.form.js"></script>
 
 </head>
-<body>
+<body> 
 
 </body>
 </html>

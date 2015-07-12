@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/classes/daoContext.xml</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener> 
+	<!-- Spring 刷新Introspector防止内存泄露 -->
+	<listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>XFireServlet</servlet-name>
+		<servlet-class>
+			org.codehaus.xfire.transport.http.XFireConfigurableServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>XFireServlet</servlet-name>
+		<url-pattern>/servlet/XFireServlet/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>XFireServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>springInitServlet</servlet-name>
+		<servlet-class>com.amani.spring.SpringInitServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+
+	<!-- 配置受保护域，只有Tomcat管理员才能察看连接池的信息 -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>proxool</web-resource-name>
+			<url-pattern>/admin</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>manager</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>proxool manager Application</realm-name>
+	</login-config>
+	<security-role>
+		<description>The role that is required to log in to the Manager Application</description>
+		<role-name>manager</role-name>
+	</security-role>
+	<error-page>
+		<error-code>401</error-code>
+		<location>/401.jsp</location>
+	</error-page>
+</web-app>
