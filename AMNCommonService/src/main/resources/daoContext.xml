@@ -15,7 +15,7 @@
 		
 		</property>
 		<property name="driverUrl">
-			<value>jdbc:jtds:sqlserver://localhost:51322/MasterDatabase2014</value>
+			<value>jdbc:jtds:sqlserver://localhost:1433/amin</value>
 		</property>
 		<property name="user" value="sa" />
 		<property name="password" value="123456" />

@@ -19,7 +19,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.12</version>
-			<scope>test</scope> 
+			<scope>test</scope>
 		</dependency>
 
 		<!-- spring -->
@@ -91,11 +91,11 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>${hibernate.version}</version>
 		</dependency>
-	<dependency>
-	<groupId>org.hibernate.javax.persistence</groupId>
-	<artifactId>hibernate-jpa-2.0-api</artifactId>
-	<version>1.0.0.Final</version>
-</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+			<version>1.0.0.Final</version>
+		</dependency>
 
 
 
@@ -171,10 +171,10 @@
 			<version>3.2.1</version>
 		</dependency>
 		<dependency>
-	<groupId>javax.persistence</groupId>
-	<artifactId>persistence-api</artifactId>
-	<version>1.0.2</version>
-</dependency>
+			<groupId>javax.persistence</groupId>
+			<artifactId>persistence-api</artifactId>
+			<version>1.0.2</version>
+		</dependency> 
 	</dependencies>
 	<build>
 		<finalName>AmaniWechatShop</finalName>
